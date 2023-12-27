@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Component     // Here component will notify the SpringBoot that need to intialised BookService object for AutoWired object
 public class BookServices {
     public static List<Book> bookList = new ArrayList<>();
 
