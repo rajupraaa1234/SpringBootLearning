@@ -28,11 +28,10 @@ public class BooksControler {
         return book;
     }
 
-//    @Autowired
-//    private BookServices bookServices;
+    @Autowired
+    private BookServices bookServices;     // AutoWired this will automatically initialised the object;
     @GetMapping("/myBookList")
     public List<Book> getBookList(){
-        BookServices bookServices = new BookServices();
         return bookServices.getBooksList();
     }
 

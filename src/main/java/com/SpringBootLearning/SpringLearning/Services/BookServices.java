@@ -1,10 +1,12 @@
 package com.SpringBootLearning.SpringLearning.Services;
 
 import com.SpringBootLearning.SpringLearning.Entity.Book;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BookServices {
     public static List<Book> bookList = new ArrayList<>();
 
