@@ -1,8 +1,13 @@
 package com.SpringBootLearning.SpringLearning.Controler;
 
 import com.SpringBootLearning.SpringLearning.Entity.Book;
+import com.SpringBootLearning.SpringLearning.Services.BookServices;
+import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class BooksControler {
@@ -23,6 +28,12 @@ public class BooksControler {
         return book;
     }
 
-
+//    @Autowired
+//    private BookServices bookServices;
+    @GetMapping("/myBookList")
+    public List<Book> getBookList(){
+        BookServices bookServices = new BookServices();
+        return bookServices.getBooksList();
+    }
 
 }
