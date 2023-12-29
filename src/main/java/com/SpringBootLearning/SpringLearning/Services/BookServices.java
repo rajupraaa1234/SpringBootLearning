@@ -20,4 +20,13 @@ public class BookServices {
     public List<Book> getBooksList() {
         return bookList;
     }
+
+    public Book getBookById(int id){
+        try{
+            Book myBook = bookList.stream().filter(e->e.getId() == id).findFirst().get();
+            return myBook;
+        }catch (Error error) {
+            return null;
+        }
+    }
 }
