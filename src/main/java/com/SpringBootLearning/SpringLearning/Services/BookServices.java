@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component     // Here component will notify the SpringBoot that need to intialised BookService object for AutoWired object
 public class BookServices {
@@ -32,5 +33,9 @@ public class BookServices {
 
     public void addBooks(Book book){
         bookList.add(book);
+    }
+
+    public void deleteBook(int id){
+        bookList = bookList.stream().filter(b->b.getId()!=id).collect(Collectors.toList());
     }
 }
