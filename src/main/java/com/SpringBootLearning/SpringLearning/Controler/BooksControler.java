@@ -52,4 +52,9 @@ public class BooksControler {
         return id;
     }
 
+    @PutMapping("/book/{id}")
+    public Book upDateBook(@RequestBody Book book , @PathVariable("id") int id){
+        bookServices.updateBook(book,id);
+        return book;
+    }
 }
