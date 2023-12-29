@@ -40,4 +40,12 @@ public class BooksControler {
         return bookServices.getBookById(id);
     }
 
+    @PostMapping("/book")
+    public Book addBook(@RequestBody Book book){
+        bookServices.addBooks(book);
+        return book;
+    }
+
+
+
 }
