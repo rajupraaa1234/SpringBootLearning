@@ -1,9 +1,18 @@
 package com.SpringBootLearning.SpringLearning.Entity;
 
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.web.WebProperties;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "book_id")
     private int id;
     private String title;
     private String author;
+
 
     public Book(int id, String title, String author) {
         this.id = id;
