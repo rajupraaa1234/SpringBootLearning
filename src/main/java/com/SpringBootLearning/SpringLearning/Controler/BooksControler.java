@@ -2,11 +2,9 @@ package com.SpringBootLearning.SpringLearning.Controler;
 
 import com.SpringBootLearning.SpringLearning.Entity.Book;
 import com.SpringBootLearning.SpringLearning.Services.BookServices;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +25,7 @@ public class BooksControler {
         Book book =  new Book();
         book.setId(1);
         book.setTitle("Java");
-        book.setAuthor("Raju");
+        book.setAuthor(null);
         return book;
     }
 
