@@ -4,6 +4,7 @@ import com.SpringBootLearning.SpringLearning.Repository.BookRepository;
 import com.SpringBootLearning.SpringLearning.Entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,8 +26,18 @@ public class BookServices {
         }
     }
 
+
+    @Transactional
     public void addBooks(Book book){
+        Book newBook = new Book();
+        newBook.setId(book.getId());
+        newBook.setTitle(book.getTitle());
+        newBook.setAuthor(book.getAuthor());
         bookList.save(book);
+        Book newBook1 = new Book();
+        newBook1.setId(1200);
+        newBook1.setAuthor(null);
+        newBook1.setTitle(null);
     }
 
     public void deleteBook(int id){
