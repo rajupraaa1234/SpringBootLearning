@@ -2,6 +2,7 @@ package com.SpringBootLearning.SpringLearning.Entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,9 +10,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table(name = "books")
-@Setter
-@Getter
-@ToString
+@Data
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
