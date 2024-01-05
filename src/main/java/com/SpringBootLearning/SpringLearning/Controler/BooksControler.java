@@ -55,7 +55,7 @@ public class BooksControler {
     @PostMapping("/book")
     public ResponseEntity<Book> addBook(@RequestBody Book book){
         bookServices.addBooks(book);
-        return ResponseEntity.ok(book);
+        return new ResponseEntity<Book>(book,HttpStatus.CREATED);
     }
 
     @DeleteMapping("/book/{id}")

@@ -2,10 +2,16 @@ package com.SpringBootLearning.SpringLearning.Entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table(name = "books")
+@Setter
+@Getter
+@ToString
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,46 +28,4 @@ public class Book {
     @JsonManagedReference
     private Author author;
 
-
-    public Book(int id, String title, Author author) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-    }
-
-    public Book() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                '}';
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
 }
