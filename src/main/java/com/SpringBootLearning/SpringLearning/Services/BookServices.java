@@ -1,13 +1,11 @@
 package com.SpringBootLearning.SpringLearning.Services;
 
-import com.SpringBootLearning.SpringLearning.Dao.BookRepository;
+import com.SpringBootLearning.SpringLearning.Repository.BookRepository;
 import com.SpringBootLearning.SpringLearning.Entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component     // Here component will notify the SpringBoot that need to intialised BookService object for AutoWired object
 public class BookServices {

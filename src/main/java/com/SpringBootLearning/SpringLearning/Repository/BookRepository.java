@@ -1,4 +1,4 @@
-package com.SpringBootLearning.SpringLearning.Dao;
+package com.SpringBootLearning.SpringLearning.Repository;
 
 import com.SpringBootLearning.SpringLearning.Entity.Book;
 import org.springframework.data.repository.CrudRepository;

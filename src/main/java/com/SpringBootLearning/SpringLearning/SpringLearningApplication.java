@@ -1,7 +1,6 @@
 package com.SpringBootLearning.SpringLearning;
 
-import com.SpringBootLearning.SpringLearning.Dao.UserRepository;
-import com.SpringBootLearning.SpringLearning.Entity.User;
+import com.SpringBootLearning.SpringLearning.Repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
