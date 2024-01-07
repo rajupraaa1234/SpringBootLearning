@@ -7,6 +7,7 @@ import com.SpringBootLearning.SpringLearning.model.UserModel;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,5 +35,17 @@ public class Registrationcontroller {
     @GetMapping("/message")
     public String getMsg(){
         return "Hi Raju";
+    }
+
+    @PreAuthorize("hasRole('NORMAL')")  // PreAuthorize help to add the accessibility level on the Api end point.
+    @GetMapping("/normal")
+    public String normalMethod(){
+        return "Hi normal";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin")
+    public String adminMethod(){
+        return "Hi admin";
     }
 }
